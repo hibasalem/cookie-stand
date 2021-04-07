@@ -43,6 +43,7 @@ function Store(name, minHourlyCustomers, maxHourlyCustomers, averageCookiesPerCu
 
     this.getRanNumber();
     this.render();
+
 }
 
 Store.prototype.getRanNumber = function () {
@@ -98,6 +99,8 @@ total();
 console.log(totalarray);
 console.log(grandtotal);
 
+
+
 /// table part2
 
 function footerRaw() {
@@ -118,12 +121,40 @@ function footerRaw() {
 };
 footerRaw();
 
-// for main page 
 
-for (let i = 0; i < hours.length; i++) {
-document.getElementById('tableOnHome').innerHTML = "hello";
+// for main page
+// for (let i = 0; i < hours.length; i++) {
+//     document.getElementById('tableOnHome').innerHTML = "hello";
+// }
+
+// adding the form 
+
+let storeForm = document.getElementById('form');
+
+form.addEventListener('submit', submitter);
+
+function submitter(event) {
+    
+
+    event.preventDefault();
+
+    let name2 = event.target.name.value;
+    let minHourlyCustomers2 = event.target.minHourlyCustomers.value;
+    let maxHourlyCustomers2 = event.target.maxHourlyCustomers.value;
+    let averageCookiesPerCustomer2 = event.target.averageCookiesPerCustomer.value;
+
+    console.log(name2, minHourlyCustomers2, maxHourlyCustomers2, averageCookiesPerCustomer2);
+    table.deleteRow(stores.length+1);
+    
+
+    let additonalStore = new Store(name2, minHourlyCustomers2, maxHourlyCustomers2, averageCookiesPerCustomer2);
+
+    console.log(additonalStore);
+    console.log(name2, minHourlyCustomers2, maxHourlyCustomers2, averageCookiesPerCustomer2);
+
+    console.log(stores);
+    footerRaw();
+
 }
-
-
 
 
