@@ -127,6 +127,7 @@ footerRaw();
 //     document.getElementById('tableOnHome').innerHTML = "hello";
 // }
 
+
 // adding the form 
 
 let storeForm = document.getElementById('form');
@@ -134,18 +135,17 @@ let storeForm = document.getElementById('form');
 form.addEventListener('submit', submitter);
 
 function submitter(event) {
-    
 
     event.preventDefault();
 
-    let name2 = event.target.name.value;
+    var name2 = event.target.name.value;
     let minHourlyCustomers2 = event.target.minHourlyCustomers.value;
     let maxHourlyCustomers2 = event.target.maxHourlyCustomers.value;
     let averageCookiesPerCustomer2 = event.target.averageCookiesPerCustomer.value;
 
     console.log(name2, minHourlyCustomers2, maxHourlyCustomers2, averageCookiesPerCustomer2);
-    table.deleteRow(stores.length+1);
-    
+    table.deleteRow(stores.length + 1);
+
 
     let additonalStore = new Store(name2, minHourlyCustomers2, maxHourlyCustomers2, averageCookiesPerCustomer2);
 
@@ -156,5 +156,44 @@ function submitter(event) {
     footerRaw();
 
 }
+console.log(stores);
+
+
+
+// try for the strech goal 
+
+
+/*let storeForm = document.getElementById('form');
+
+form.addEventListener('submit', submitter);
+
+function submitter(event) {
+
+    event.preventDefault();
+
+    var newStoreNname = event.target.name.value;
+    let newStoreMinHourlyCustomers = event.target.minHourlyCustomers.value;
+    let newStoreMaxHourlyCustomers = event.target.maxHourlyCustomers.value;
+    let newStoreAverageCookiesPerCustomer = event.target.averageCookiesPerCustomer.value;
+
+    for (let i = 0; i < stores.length; i++) {
+
+        if (newStoreNname === stores[i].name) {
+            table.deleteRow(stores.length + 1);
+            table.deleteRow(stores[i]);
+            let additonalStore = new Store(newStoreNname, newStoreMinHourlyCustomers, newStoreMaxHourlyCustomers, newStoreAverageCookiesPerCustomer);
+            console.log("updade",additonalStore);
+            break;
+        }
+        else {
+            table.deleteRow(stores.length + 1);
+            let additonalStore = new Store(newStoreNname, newStoreMinHourlyCustomers, newStoreMaxHourlyCustomers, newStoreAverageCookiesPerCustomer);   
+            console.log("new",additonalStore);   
+        }
+    }
+    footerRaw()
+}
+
+console.log(stores);*/
 
 
