@@ -9,6 +9,22 @@ table  th {
     font-weight: bold;
 } 
 
+fieldset {
+    border: #1687a7;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* input:invalid:required {
+    background-image:rgba(255, 0, 0, 0.322);
+}
+  
+input:valid {
+    border: 2px solid black;
+} */
+
+
 
 
 *{
