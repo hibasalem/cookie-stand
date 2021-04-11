@@ -80,8 +80,8 @@ let lima = new Store('lima', 2, 16, 4.6);
 console.log(seattle, tokyo, dubai, Paris, lima);
 
 ///  total 
-let totalarray = []
-let grandtotal = 0
+let totalarray = [];
+let grandtotal = 0;
 
 function total() {
     for (let i = 0; i < hours.length; i++) {
@@ -122,13 +122,7 @@ function footerRaw() {
 footerRaw();
 
 
-// for main page
-// for (let i = 0; i < hours.length; i++) {
-//     document.getElementById('tableOnHome').innerHTML = "hello";
-// }
-
-
-// adding the form 
+//  the form 
 
 let storeForm = document.getElementById('form');
 
@@ -136,9 +130,10 @@ form.addEventListener('submit', submitter);
 
 function submitter(event) {
 
+
     event.preventDefault();
 
-    var name2 = event.target.name.value;
+    let name2 = event.target.name.value;
     let minHourlyCustomers2 = event.target.minHourlyCustomers.value;
     let maxHourlyCustomers2 = event.target.maxHourlyCustomers.value;
     let averageCookiesPerCustomer2 = event.target.averageCookiesPerCustomer.value;
@@ -151,8 +146,11 @@ function submitter(event) {
 
     console.log(additonalStore);
     console.log(name2, minHourlyCustomers2, maxHourlyCustomers2, averageCookiesPerCustomer2);
-
     console.log(stores);
+
+    totalarray = [];
+    grandtotal = 0;
+    total();
     footerRaw();
 
 }
@@ -160,7 +158,7 @@ console.log(stores);
 
 
 
-// try for the strech goal 
+// try for the strech goal Lab09 not workking yet , only works for one input 
 
 
 /*let storeForm = document.getElementById('form');
@@ -171,29 +169,45 @@ function submitter(event) {
 
     event.preventDefault();
 
-    var newStoreNname = event.target.name.value;
+    let newStoreName = event.target.name.value;
     let newStoreMinHourlyCustomers = event.target.minHourlyCustomers.value;
     let newStoreMaxHourlyCustomers = event.target.maxHourlyCustomers.value;
     let newStoreAverageCookiesPerCustomer = event.target.averageCookiesPerCustomer.value;
 
+    let added = "not added";
+
+
     for (let i = 0; i < stores.length; i++) {
 
-        if (newStoreNname === stores[i].name) {
+        if (newStoreName.toLowerCase() === stores[i].name) {
             table.deleteRow(stores.length + 1);
-            table.deleteRow(stores[i]);
-            let additonalStore = new Store(newStoreNname, newStoreMinHourlyCustomers, newStoreMaxHourlyCustomers, newStoreAverageCookiesPerCustomer);
-            console.log("updade",additonalStore);
-            break;
-        }
-        else {
-            table.deleteRow(stores.length + 1);
-            let additonalStore = new Store(newStoreNname, newStoreMinHourlyCustomers, newStoreMaxHourlyCustomers, newStoreAverageCookiesPerCustomer);   
-            console.log("new",additonalStore);   
+            table.deleteRow(i + 1);
+            let additonalStore = new Store(newStoreName, newStoreMinHourlyCustomers, newStoreMaxHourlyCustomers, newStoreAverageCookiesPerCustomer);
+            console.log("updade", additonalStore);
+            added = "added";
+            totalarray = [];
+            grandtotal = 0;
+            total();
+            footerRaw();
+            console.log("first if runned");
         }
     }
-    footerRaw()
-}
 
-console.log(stores);*/
+    if (added = "not added") {
+        table.deleteRow(stores.length + 1);
+        let additonalStore = new Store(newStoreName, newStoreMinHourlyCustomers, newStoreMaxHourlyCustomers, newStoreAverageCookiesPerCustomer);
+        console.log("new", additonalStore);
+        totalarray = [];
+        grandtotal = 0;
+        total()
+        footerRaw()
+        console.log("sec if runned");
+    }
+}
+*/
+
+
+
+
 
 
